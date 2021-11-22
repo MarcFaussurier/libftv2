@@ -9,8 +9,8 @@ using namespace std;
 		printf("On line %i: KO\n", __LINE__);	}\
 }
 
-#define EQ(X, Y) { if (Y != X) { \
-	cout << "Error: expected [" << X << "] got [" << Y  << "]\n"; \
+#define EQ(X, Y) { if ((Y) != (X)) { \
+	cout << "Error: expected [" << (X) << "] got [" << (Y)  << "]\n"; \
 	printf("On line %i: KO\n", __LINE__); } \
 } 
 int 	main()
@@ -187,7 +187,59 @@ int 	main()
 	//
 	
 	EQ(strncmp("hello42", "hello22", 2), ft_strncmp("hello42", "hello22", 2));
-	printf("%i\n", strncmp("hello42", "hello22", 7));
-	printf("%i\n", ft_strncmp("hello42", "hello22", 7));
+	EQ(strncmp("hello42", "hello22", 7) > 0, ft_strncmp("hello42", "hello22", 7) > 0);
+	EQ(strncmp("hello22", "hello42", 7) < 0, ft_strncmp("hello22", "hello42", 7) < 0);
 	EQ(strncmp("hello42", "0hello22", 0), ft_strncmp("hello42", "0hello22", 0));
+
+
+	char t[] = "\xff\0dawdawda\xfe\xfe\xff";
+
+	EQ(memchr(t, '\xfe', 16), ft_memchr(t, '\xfe', 16));
+	EQ(memchr(t, 'z', 6), ft_memchr(t, 'z', 6));
+	EQ(memchr(t, 0, 6), ft_memchr(t, 0, 6));
+
+	char s1[] = "\xff\0\xfe 5245";
+	EQ(memcmp(s1, s1, 8), ft_memcmp(s1, s1, 8));
+	char s2[] = "\xff\0\xfe 5246";
+	EQ(memcmp(s1, s2, 8) < 0, ft_memcmp(s1, s2, 8) < 0);
+	char s3[] = "\xff\0\xfe 5243";
+	EQ(memcmp(s1, s2, 8) > 0, ft_memcmp(s1, s1, 8) > 0);
+
+
+    const char *largestring = "Foo Bar Baz";
+    const char *smallstring = "Bar";
+    char *ptr;
+
+    EQ((unsigned long long)strnstr(largestring, smallstring, 4), (unsigned long long)ft_strnstr(largestring, smallstring, 4));
+    EQ((unsigned long long) strnstr(largestring, smallstring, 12), (unsigned long long)ft_strnstr(largestring, smallstring, 12));
+
+    const char *smallstring2 = "Bar2";
+
+    EQ((unsigned long long)strnstr(largestring, smallstring2, 12), (unsigned long long)ft_strnstr(largestring, smallstring2, 12));
+
+#include <limits.h>
+#include <stdlib.h>
+	EQ(atoi("2147483647"), ft_atoi("2147483647"));
+	EQ(atoi(" \t\v\f\r -2147483648"), ft_atoi(" \t\v\f\r -2147483648"));
+	EQ(atoi("0"), ft_atoi("0"));
+	EQ(atoi("-42"), ft_atoi("-42"));
+	EQ(atoi("42"), ft_atoi("42"));
+
+	void* r1 = calloc(2, 3);
+	void* r2 = calloc(2, 3);
+	EQ(0, memcmp(r1, r2, 2 * 3))
+
+	r1 = calloc(0, 0);
+	r2 = calloc(0, 0);
+	EQ(0, memcmp(r1, r2, 0));
+
+	char *a = strdup("avion");
+	char *b = ft_strdup(a);
+	EQ(0, strcmp(a, b));
+	EQ(0, a == b);
+	
+	a = strdup("");
+	b = ft_strdup(a);
+	EQ(0, strcmp(a, b));
+	EQ(0, a == b);
 }
