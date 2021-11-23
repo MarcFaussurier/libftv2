@@ -6,7 +6,7 @@
 #    By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 17:16:43 by mafaussu          #+#    #+#              #
-#    Updated: 2021/11/22 15:28:15 by mafaussu         ###   ########lyon.fr    #
+#    Updated: 2021/11/23 18:04:46 by mafaussu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,8 +51,6 @@ $(NAME):	$(COBJ)
 	$(AR) $(NAME) $(COBJ)
 bonus: 		$(COBJ) $(CBONUSOBJ)
 	$(AR) $(NAME) $(COBJ) $(CBONUSOBJ)
-test:		$(NAME)
-	$(CX) -I. test.c++ -lft && ./a.out
 clean:
 	$(RM) $(COBJ)
 fclean:		clean
