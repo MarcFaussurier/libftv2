@@ -6,41 +6,29 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 09:31:13 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/22 15:36:34 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 19:30:13 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <libft.h>
 
 static int	ft_is_sep(char c, char charset)
 {
 	return (c == charset);
 }
 
-static int	ft_split_len(char *str, char charset)
+static void	*ft_free2(char **o, size_t size)
 {
-	int	size;
-	int	i;
-	int	len;
+	size_t	i;
 
-	size = 1;
 	i = 0;
-	len = 0;
-	while (str[i])
+	while (i < size)
 	{
-		if (ft_is_sep(str[i], charset))
-		{
-			if (len)
-				size += 1;
-			len = 0;
-		}
-		else
-			len += 1;
-		if (!str[i + 1] && len)
-			size += 1;
+		free(o[i]);
 		i += 1;
 	}
-	return (size);
+	free(o);
+	return (0);
 }
 
 static void	ft_set_len_s(int *len, int a, char **s, char *b)
@@ -55,6 +43,8 @@ static char	*ft_str_s(char *s, int len)
 	int		y;
 
 	o = malloc(len + 1);
+	if (!o)
+		return (0);
 	y = -1;
 	while (++y < len)
 		o[y] = s[y];
@@ -62,15 +52,13 @@ static char	*ft_str_s(char *s, int len)
 	return (o);
 }
 
-char	**ft_split(char *str, char charset)
+char	**ft_split2(char **o, char *str, char charset)
 {
 	int		i;
 	int		size;
 	int		len;
-	char	**o;
 	char	*s;
 
-	o = malloc(ft_split_len(str, charset) * sizeof(char *));
 	size = 0;
 	i = -1;
 	len = 0;
@@ -81,7 +69,9 @@ char	**ft_split(char *str, char charset)
 			len += 1;
 		if (len && (ft_is_sep(str[i], charset) || !str[i + 1]))
 		{
-			o[size++] = ft_str_s(s, len);
+			o[size] = ft_str_s(s, len);
+			if (!o[size++])
+				return (ft_free2(o, size - 1));
 			ft_set_len_s(&len, 0, &s, str + i + 1);
 		}
 		else if (ft_is_sep(str[i], charset))

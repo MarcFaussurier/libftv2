@@ -6,7 +6,7 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:36:50 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:40:04 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 18:45:58 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ static unsigned short	ft_numlen(int n)
 
 char	*ft_itoa_end(char *out, int numlen, int n)
 {
+	size_t			i;
+	int				isn;
+
 	isn = 0;
 	i = 0;
 	if (n == -2147483648)
@@ -61,9 +64,7 @@ char	*ft_itoa_end(char *out, int numlen, int n)
 char	*ft_itoa(int n)
 {
 	unsigned short	numlen;
-	size_t			i;
 	char			*out;
-	int				isn;
 
 	if (n == 0)
 		return (ft_strdup("0"));

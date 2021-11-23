@@ -6,7 +6,7 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:15:15 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:16:16 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 19:39:08 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	min_len;
 	char			*out;
 
-	if (!s || len <= 0 || start >= ft_strlen(s))
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	else
 	{

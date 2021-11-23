@@ -6,7 +6,7 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:42:13 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:42:33 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 19:13:52 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_calloc(size_t count, size_t size)
 
 	bytes = count * size;
 	o = malloc(bytes);
+	if (!o)
+		return (0);
 	i = 0;
 	while (i < bytes)
 	{

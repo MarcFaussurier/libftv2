@@ -6,7 +6,7 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:27:52 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:34:45 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 19:39:52 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*tmp;
 	t_list	*new;
 
-	if (!lst || !f)
-		return (0);
 	tmp = 0;
 	out = &tmp;
 	while (lst)

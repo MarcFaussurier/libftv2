@@ -6,7 +6,7 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:22:49 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:23:05 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 19:35:30 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (!s)
-		return ;
 	write(fd, s, ft_strlen(s));
 }

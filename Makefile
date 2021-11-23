@@ -6,7 +6,7 @@
 #    By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 17:16:43 by mafaussu          #+#    #+#              #
-#    Updated: 2021/11/23 18:04:46 by mafaussu         ###   ########lyon.fr    #
+#    Updated: 2021/11/23 19:31:19 by mafaussu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ ft_toupper.c 						ft_memchr.c\
 ft_substr.c							ft_strtrim_begin.c\
 ft_strtrim_end.c					ft_is_char_in.c\
 ft_strtrim.c						ft_strjoin.c\
-ft_split.c							ft_itoa.c
+ft_split.c							ft_itoa.c\
+ft_split2.c
 CBONUSSRC := ft_lstadd_back_bonus.c	ft_lstadd_front_bonus.c\
 ft_lstclear_bonus.c					ft_lstdelone_bonus.c\
 ft_lstiter_bonus.c					ft_lstlast_bonus.c\
@@ -43,14 +44,13 @@ ft_lstmap_bonus.c					ft_lstnew_bonus.c\
 ft_lstsize_bonus.c
 COBJ	:= $(CSRC:.c=.o)
 CBONUSOBJ	:= $(CBONUSSRC:.c=.o)
-.SUFFIXES:
 all:		$(NAME)
 %.o:		%.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 $(NAME):	$(COBJ)
 	$(AR) $(NAME) $(COBJ)
-bonus: 		$(COBJ) $(CBONUSOBJ)
-	$(AR) $(NAME) $(COBJ) $(CBONUSOBJ)
+bonus: 		$(NAME) $(CBONUSOBJ)
+	$(AR) $(NAME) $(CBONUSOBJ)
 clean:
 	$(RM) $(COBJ)
 fclean:		clean
