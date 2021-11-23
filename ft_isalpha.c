@@ -6,13 +6,13 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 17:18:44 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/06 17:41:01 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 18:41:37 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	return (ft_islower(c) || ft_isupper(c));
 }

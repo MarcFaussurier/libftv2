@@ -6,21 +6,19 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:17:36 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/22 15:29:09 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 18:18:08 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-char			*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*last;
 
 	last = 0;
 	while (1)
 	{
-		if (*s == (char)c)
-			last = (char*) s;
+		if (*s == (char) c)
+			last = (char *) s;
 		if (!*s)
 			break ;
 		s += 1;

@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 18:20:44 by mafaussu          #+#    #+#             */
+/*   Updated: 2021/11/23 18:21:03 by mafaussu         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <libft.h>
 
-size_t 		ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t    initial_len;
-	size_t		i;
+	size_t	initial_len;
+	size_t	i;
 
 	initial_len = ft_strlen(dst);
 	while (*dst)

@@ -6,11 +6,11 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 17:18:44 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/06 17:39:11 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 18:41:22 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_islower(int c)
+int	ft_islower(int c)
 {
 	return (c >= 'a' && c <= 'z');
 }
