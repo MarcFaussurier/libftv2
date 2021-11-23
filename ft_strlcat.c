@@ -6,19 +6,31 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:20:44 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:21:03 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 20:07:36 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
+static size_t	ft_strnlen(char *dst, size_t dstsize)
+{
+	size_t	i;
+
+	i = 0;
+	while (*dst++ && dstsize--)
+		i += 1;
+	return (i);
+}
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	initial_len;
 	size_t	i;
+	size_t	d2;
 
-	initial_len = ft_strlen(dst);
-	while (*dst)
+	d2 = dstsize;
+	initial_len = ft_strnlen(dst, dstsize);
+	while (*dst && d2--)
 		dst += 1;
 	if (dstsize > initial_len)
 	{
