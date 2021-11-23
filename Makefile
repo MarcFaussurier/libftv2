@@ -6,14 +6,13 @@
 #    By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 17:16:43 by mafaussu          #+#    #+#              #
-#    Updated: 2021/11/23 19:31:19 by mafaussu         ###   ########lyon.fr    #
+#    Updated: 2021/11/23 20:29:22 by mafaussu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    := libft.a
 RM      := rm -rf
 CC      := gcc
-CX		:= g++
 AR		:= ar -rcs
 CFLAGS  := -Werror -Wextra -Wall -I. #-g -fsanitize=address
 CSRC    := ft_atoi.c               	ft_memcmp.c\
@@ -37,11 +36,11 @@ ft_strtrim_end.c					ft_is_char_in.c\
 ft_strtrim.c						ft_strjoin.c\
 ft_split.c							ft_itoa.c\
 ft_split2.c
-CBONUSSRC := ft_lstadd_back_bonus.c	ft_lstadd_front_bonus.c\
-ft_lstclear_bonus.c					ft_lstdelone_bonus.c\
-ft_lstiter_bonus.c					ft_lstlast_bonus.c\
-ft_lstmap_bonus.c					ft_lstnew_bonus.c\
-ft_lstsize_bonus.c
+CBONUSSRC := ft_lstadd_back.c	ft_lstadd_front.c\
+ft_lstclear.c					ft_lstdelone.c\
+ft_lstiter.c					ft_lstlast.c\
+ft_lstmap.c					ft_lstnew.c\
+ft_lstsize.c
 COBJ	:= $(CSRC:.c=.o)
 CBONUSOBJ	:= $(CBONUSSRC:.c=.o)
 all:		$(NAME)
@@ -52,7 +51,7 @@ $(NAME):	$(COBJ)
 bonus: 		$(NAME) $(CBONUSOBJ)
 	$(AR) $(NAME) $(CBONUSOBJ)
 clean:
-	$(RM) $(COBJ)
+	$(RM) $(COBJ) $(CBONUSOBJ)
 fclean:		clean
 	$(RM) $(NAME)
 re:			fclean all
