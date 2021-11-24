@@ -6,9 +6,11 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 17:18:44 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:41:22 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 16:29:03 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_islower(int c)
 {

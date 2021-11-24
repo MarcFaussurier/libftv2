@@ -6,7 +6,7 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 17:33:50 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 19:31:42 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 16:52:56 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,4 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*));
-char		**ft_split2(char **o, char *str, char charset);
 #endif

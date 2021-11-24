@@ -6,7 +6,7 @@
 #    By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 17:16:43 by mafaussu          #+#    #+#              #
-#    Updated: 2021/11/24 11:15:35 by mafaussu         ###   ########lyon.fr    #
+#    Updated: 2021/11/24 17:00:52 by mafaussu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME    	:= libft.a
 RM      	:= rm -rf
 CC      	:= gcc
 AR			:= ar -rcs
-CFLAGS  	:= -Werror -Wextra -Wall -I. #-g -fsanitize=address
+CFLAGS  	:= -Wall -Wextra -Werror #-g -fsanitize=address
 CSRC    	:= 	ft_atoi.c           ft_memcmp.c\
 				ft_bzero.c			ft_memcpy.c\
 				ft_calloc.c        	ft_memmove.c\
@@ -34,8 +34,7 @@ CSRC    	:= 	ft_atoi.c           ft_memcmp.c\
 				ft_substr.c			ft_strtrim_begin.c\
 				ft_strtrim_end.c	ft_is_char_in.c\
 				ft_strtrim.c		ft_strjoin.c\
-				ft_split.c			ft_itoa.c\
-				ft_split2.c
+				ft_split.c			ft_itoa.c
 CBONUSSRC 	:= 	ft_lstadd_back.c	ft_lstadd_front.c\
 				ft_lstclear.c		ft_lstdelone.c\
 				ft_lstiter.c		ft_lstlast.c\
@@ -56,4 +55,4 @@ fclean:		clean
 	$(RM) $(NAME)
 re:			fclean all
 .PHONY:
-		all fclean clean re
+		all bonus fclean clean re

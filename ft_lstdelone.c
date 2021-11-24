@@ -6,11 +6,11 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:35:23 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:35:28 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 16:30:57 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {

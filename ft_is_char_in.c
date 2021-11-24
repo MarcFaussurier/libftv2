@@ -6,11 +6,11 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:41:46 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:42:05 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 16:27:59 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_is_char_in(char c, char const *str)
 {

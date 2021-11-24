@@ -6,9 +6,11 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 17:52:53 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/06 17:53:21 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 16:29:13 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

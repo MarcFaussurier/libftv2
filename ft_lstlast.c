@@ -6,11 +6,11 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:34:56 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:35:00 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 16:31:18 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {

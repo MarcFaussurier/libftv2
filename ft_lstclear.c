@@ -6,11 +6,11 @@
 /*   By: mafaussu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:35:54 by mafaussu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:36:06 by mafaussu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 16:30:10 by mafaussu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
